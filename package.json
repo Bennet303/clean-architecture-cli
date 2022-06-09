@@ -15,10 +15,13 @@
   "devDependencies": {
     "@oclif/test": "^2",
     "@types/node": "^16.9.4",
-    "cz-conventional-changelog": "^3.3.0",
+    "cz-conventional-changelog": "3.0.1",
     "eslint": "^7.32.0",
     "eslint-config-oclif": "^4",
     "eslint-config-oclif-typescript": "^1.0.2",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-jest": "^26.5.3",
+    "eslint-plugin-prettier": "^4.0.0",
     "globby": "^11",
     "jest": "^28.1.1",
     "oclif": "^3",
@@ -27,7 +30,11 @@
     "tslib": "^2.3.1",
     "typescript": "^4.4.3"
   },
-  "jest": {},
+  "jest": {
+    "setupFiles": [
+      "./test/helpers/init.js"
+    ]
+  },
   "engines": {
     "node": ">=12.0.0"
   },
@@ -67,7 +74,7 @@
   "types": "dist/index.d.ts",
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+      "path": "cz-conventional-changelog"
     }
   }
 }

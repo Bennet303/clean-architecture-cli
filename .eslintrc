@@ -1,6 +1,11 @@
 {
-  "extends": [
-    "oclif",
-    "oclif-typescript"
+  "root": true,
+  "extends": ["oclif", "oclif-typescript", "prettier"],
+  "plugins": ["prettier", "jest"],
+  "overrides": [
+    {
+      "files": ["*.spec.ts", "*.spec.tsx"],
+      "extends": ["plugin:jest/recommended", "plugin:jest/style"]
+    }
   ]
 }
